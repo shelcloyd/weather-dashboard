@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+
+<body>
+    <section>
+        <div id="search-bar">
+            <input type="text" id="search-box" placeholder="Search Location...">
+            <input type="submit" value="Search" id="search">
+            <table>
+                <tbody>
+                    <tr>
+                        <!-- this is where the search history list will go... -->
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div id="container">
+            <h1>Current Weather</h1>
+            <h3 id="name"></h3>
+            <p class="icon"></p>
+            <p class="temp"></p>
+            <p class="wind"></p>
+            <p class="humid"></p>
+        </div>
+            <h3>5-Day Forcast:</h3>
+            <div id="five-day">
+                <div class="card border border-dark">
+                    <h5 class="day"></h5>
+                    <p class="icon"></p>
+                    <p class="temp"></p>
+                    <p class="wind"></p>
+                    <p class="humid"></p>
+                </div>
+                <div class="card border border-dark">
+                    <h5 class="day"></h5>
+                    <p class="icon"></p>
+                    <p class="temp"></p>
+                    <p class="wind"></p>
+                    <p class="humid"></p>
+                </div>
+                <div class="card border border-dark">
+                    <h5 class="day"></h5>
+                    <p class="icon"></p>
+                    <p class="temp"></p>
+                    <p class="wind"></p>
+                    <p class="humid"></p>
+                </div>
+                <div class="card border border-dark">
+                    <h5 class="day"></h5>
+                    <p class="icon"></p>
+                    <p class="temp"></p>
+                    <p class="wind"></p>
+                    <p class="humid"></p>
+                </div>
+                <div class="card border border-dark">
+                    <h5 class="day"></h5>
+                    <p class="icon"></p>
+                    <p class="temp"></p>
+                    <p class="wind"></p>
+                    <p class="humid"></p>
+                </div>
+            </div>
+    </section>
+
+    <!-- jquery link here -->
+    <!-- jquery ui link here -->
+    <!-- moment link ??? -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"
+        integrity="sha256-eTyxS0rkjpLEo16uXTS0uVCS4815lc40K2iVpWDvdSY=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+    <script src="./assets/javascript/script.js"></script>
+</body>
+
+</html>

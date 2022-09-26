@@ -1,0 +1,52 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    background-color: antiquewhite;
+}
+
+#search-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 25%;
+    margin: 20px;
+    background-color: white;
+    border-style: solid;
+    border-radius: 10px;
+}
+#search-bar input {
+    background-color: white;
+    margin: 10px;
+    text-align: center;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+
+#container h1 {
+    margin-bottom: 30px;
+}
+
+#container p {
+    font-weight: bold;
+}
+
+#five-day {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 20px;
+    background-color: white;
+    border-style: solid;
+    border-radius: 10px;
+}
+
+#box {
+    margin: 20px;
+}
