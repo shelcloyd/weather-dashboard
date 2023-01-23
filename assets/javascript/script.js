@@ -41,27 +41,40 @@ btn.addEventListener('click', function () {
     cityName.innerHTML = input.value;
 
     fetch('https://api.openweathermap.org/data/2.5/forecast?q=' + input.value + '&appid=' + apiKey + '&units=imperial')
-        .then(response => response.json())
-        .then(data => console.log(data))
-        .then(data => {
-            const day = document.querySelector('.day');
-            const icon = document.querySelector('.icon');
-            const temp = document.querySelector('.temp');
-            const wind = document.querySelector('.wind');
-            const humidity = document.querySelector('.humidity');
-            for (i = 0; i < 5; i++) {
-                let dayValue = data['list'][i]['dt'];
-                let tempValue = data["list"][i]["main"]["temp"];
-                let windValue = data["list"][i]["wind"]["speed"];
-                let humidityValue = data["list"][i]["main"]["humidity"];
-                let iconValue = data["list"][i]["weather"]["icon"];
+     
+        .then(function (response) {
+            return response.json();
+        }
+        )
+        .then(function (data) {
+            console.log(data);
 
-                day.innerHTML = dayValue;
-                temp.innerHTML = "Temperature: " + tempValue + "°F";
-                wind.innerHTML = "Wind Speed: " + windValue + "mph";
-                humidity.innerHTML = "Humidity: " + humidityValue + "%";
-                icon.innerHTML = '<img src="http://openweathermap.org/img/wn/' + iconValue + '@2x.png">';
+            const container = document.querySelector('#container');
+
+            container.querySelector('.icon').innerHTML = '<img src="http://openweathermap.org/img/wn/' + data["list"][0]["weather"][0]["icon"] + '@2x.png">';
+            container.querySelector('.temp').innerHTML = 'Temperature: ' + data["list"][0]["main"]["temp"];
+            container.querySelector('.wind').innerHTML = 'Wind Speed: ' + data["list"][0]["wind"]["speed"];
+            container.querySelector('.humidity').innerHTML = 'Humidity: ' + data["list"][0]["main"]["humidity"];
+
+            let days = data.list.filter(day => {
+                return day.dt_txt.includes('12:00:00')
+              })
+
+              console.log(days);
+
+            for (let i = 0; i <=4; i++){
+                const card = document.querySelector('.card' + i);
+
+                card.querySelector('.day').innerHTML = days[i].dt_txt;
+                card.querySelector('.icon').innerHTML = '<img src="http://openweathermap.org/img/wn/' + days[i].weather[0].icon + '@2x.png">';
+                card.querySelector('.temp').innerHTML = 'Temperature: ' + days[i].main.temp + '°F';
+                card.querySelector('.wind').innerHTML = 'Wind Speed: ' + days[i].wind.speed + 'mph';
+                card.querySelector('.humidity').innerHTML = 'Humidity: ' + days[i].main.humidity + '%';            
             }
-        })
-        .catch(err => alert('No data found.'))
-});
+        }
+        )
+        .catch(function (err) {
+            console.log(err);
+        }
+        )
+})
