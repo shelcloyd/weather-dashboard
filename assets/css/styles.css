@@ -41,6 +41,18 @@ body {
     margin-bottom: 25px;
 }
 
-.search-history {
-    max-width: 18rem;
+#search-history {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#search-history button {
+    max-width: fit-content;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    background-color: rgb(207, 247, 255);
+    color: rgb(46, 149, 172);
+    font-weight: bold;
 }
