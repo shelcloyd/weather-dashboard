@@ -17,6 +17,8 @@ btn.addEventListener('click', function () {
         .then(function (data) {
             console.log(data);
 
+            localStorage.setItem('search', JSON.stringify(data));
+
             const container = document.querySelector('#container');
 
             container.querySelector('.icon').innerHTML = '<img src="http://openweathermap.org/img/wn/' + data["list"][0]["weather"][0]["icon"] + '@2x.png">';

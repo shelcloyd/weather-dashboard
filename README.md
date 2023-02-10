@@ -69,3 +69,6 @@ ___
 ## **Questions?**
 * GitHub: shelcloyd
 * Email:  shel.cloyd@gmail.com
+
+---
+<a href="https://www.freepik.com/free-vector/blue-sky-with-clouds-background-elegant_9191622.htm#query=weather%20background&position=1&from_view=search&track=sph">Image by starline</a> on Freepik
